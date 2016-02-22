@@ -1,4 +1,4 @@
-# conan-fakeit
+# conan-fakeit [![Build Status](https://travis-ci.org/hinrikg/conan-fakeit.svg?branch=master)](https://travis-ci.org/hinrikg/conan-fakeit)
 
 [Conan.io](https://conan.io) package for FakeIt
 
