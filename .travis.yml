@@ -1,0 +1,27 @@
+language: python
+sudo: required
+env:
+  global:
+    - CONAN_UPLOAD: 1
+    - CONAN_REFERENCE: "FakeIt/2.0.2"
+    - CONAN_USERNAME: "hinrikg"
+    - CONAN_CHANNEL: "stable"
+compiler:
+  - gcc
+  - clang
+
+before_install:
+  # upgrade CMake
+  - sudo add-apt-repository ppa:kalakris/cmake
+  - sudo apt-get update -qq
+  - sudo apt-get install cmake
+
+install:
+  # install Conan and associated package tools
+  - pip install conan_package_tools
+
+  # initialize the local conan repository
+  - conan user
+
+script:
+  - python build.py
