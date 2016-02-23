@@ -6,22 +6,20 @@ env:
     - CONAN_REFERENCE: "FakeIt/2.0.2"
     - CONAN_USERNAME: "hinrikg"
     - CONAN_CHANNEL: "stable"
-compiler:
-  - gcc
 
-before_install:
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-  - sudo add-apt-repository ppa:kalakris/cmake -y
-  - sudo apt-get update -qq
-
-  # upgrade GCC
-  - sudo apt-get install g++-4.9 -y
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
-
-  # upgrade CMake
-  - sudo apt-get install cmake -y
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - kalakris-cmake
+    packages:
+      - g++-4.8
+      - cmake
 
 install:
+  - export CC='gcc-4.8'
+  - export CXX='g++-4.8'
+
   # install Conan and associated package tools
   - pip install conan_package_tools
 
