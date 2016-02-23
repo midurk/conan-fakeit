@@ -8,12 +8,17 @@ env:
     - CONAN_CHANNEL: "stable"
 compiler:
   - gcc
-  - clang
 
 before_install:
-  # upgrade CMake
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo add-apt-repository ppa:kalakris/cmake -y
   - sudo apt-get update -qq
+
+  # upgrade GCC
+  - sudo apt-get install g++-4.9 -y
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
+
+  # upgrade CMake
   - sudo apt-get install cmake -y
 
 install:
