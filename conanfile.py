@@ -3,11 +3,11 @@ import os
 
 class FakeItConan(ConanFile):
     name = 'FakeIt'
-    version = '2.0.2'
+    version = 'master'
     settings = None
-    options = {'integration': ['boost', 'gtest', 'mstest', 'standalone', 'tpunit']}
+    options = {'integration': ['boost', 'gtest', 'mstest', 'standalone', 'tpunit', 'catch', 'qtest']}
     default_options = 'integration=standalone'
-    url = 'https://github.com/hinrikg/conan-fakeit.git'
+    url = 'https://github.com/gasuketsu/conan-fakeit.git'
     license = 'MIT'
 
     def source(self):
