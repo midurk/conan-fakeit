@@ -1,6 +1,7 @@
 from conans import ConanFile
 import os
 
+
 class FakeItConan(ConanFile):
     name = 'FakeIt'
     version = 'master'
