@@ -28,11 +28,6 @@ class FakeItConan(ConanFile):
         self.copy(pattern='*.hpp', dst='config', src='FakeIt/config')
         self.copy('LICENSE', dst='.', src='FakeIt')
 
-    def conan_info(self):
-        # the integration option is just for package consumption and should not
-        # generate new variations of the package
-        self.info.options.integration = 'Any'
-
     def package_info(self):
         config_dir = os.path.join('config', str(self.options.integration))
         self.cpp_info.includedirs = ['include', config_dir]
