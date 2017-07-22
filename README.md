@@ -1,22 +1,18 @@
-# conan-fakeit [![Build Status](https://travis-ci.org/hinrikg/conan-fakeit.svg?branch=master)](https://travis-ci.org/hinrikg/conan-fakeit)
+# conan-fakeit
 
 [Conan.io](https://conan.io) package for [FakeIt](https://github.com/eranpeer/FakeIt)
 
 FakeIt is a simple mocking framework for C++. It supports GCC, Clang and MS Visual C++.
 
-## Building the package
+## Build and test the package
 
 Install the Conan package manager and the Conan package tools with pip
 
-    $ pip install conan_package_tools
+    $ pip install conan
 
-Then build the package with
+Then build and test the package with
 
-    $ python build.py
-
-## Uploading the package
-
-    $ conan upload FakeIt/2.0.2@hinrikg/stable
+    $ conan test_package
 
 ## Using the package
 
@@ -24,12 +20,12 @@ Then build the package with
 
 You can manually install this package to your local cache by running
 
-    $ conan install FakeIt/2.0.2@hinrikg/stable
+    $ conan install --options integration=standalone FakeIt/<version>@gasuketsu/stable
 
 If you handle multiple dependencies in your project it's better to add a *conanfile.txt*
 
     [requires]
-    FakeIt/2.0.2@hinrikg/stable
+    FakeIt/<version>@gasuketsu/stable
 
     [options]
     FakeIt:integration=standalone
@@ -54,8 +50,11 @@ error messages into the unit testing framework output.
 The following frameworks are supported:
 
 - [Boost Test](http://www.boost.org/doc/libs/release/libs/test) using `FakeIt:integration=boost`
+- [Catch](https://github.com/philsquared/Catch) using `FakeIt:integration=catch`
 - [Google Test](https://github.com/google/googletest) using `FakeIt:integration=gtest`
+- [mettle](https://github.com/jimporter/mettle) using `FakeIt:integration=mettle`
 - [MSTest](http://en.wikipedia.org/wiki/Visual_Studio_Unit_Testing_Framework) using `FakeIt:integration=mstest`
+- [QTest](http://doc.qt.io/qt-5/qttest-index.html) using `FakeIt:integration=qtest`
 - [tpunit++](https://github.com/tpounds/tpunitpp) using `FakeIt:integration=tpunit`
 
 By default FakeIt is configured without any framework integration using `FakeIt:integration=standalone`.
