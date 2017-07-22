@@ -1,30 +1,37 @@
-language: python
-sudo: required
-env:
-  global:
-    - CONAN_UPLOAD: 1
-    - CONAN_REFERENCE: "FakeIt/2.0.2"
-    - CONAN_USERNAME: "hinrikg"
-    - CONAN_CHANNEL: "stable"
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-      - kalakris-cmake
-    packages:
-      - g++-4.8
-      - cmake
+env:
+   global:
+     - CONAN_REFERENCE: "FakeIt/master"
+     - CONAN_USERNAME: "gasuketsu"
+     - CONAN_LOGIN_USERNAME: "gasuketsu"
+     - CONAN_CHANNEL: "stable"
+     
+linux: &linux
+   os: linux
+   sudo: required
+   language: python
+   python: "3.6"
+   services:
+     - docker
+osx: &osx
+   os: osx
+   language: generic
+matrix:
+   include:
+
+      - <<: *linux
+        env: CONAN_GCC_VERSIONS=4.9 CONAN_DOCKER_IMAGE=lasote/conangcc49
+
+      - <<: *linux
+        env: CONAN_GCC_VERSIONS=5.4 CONAN_DOCKER_IMAGE=lasote/conangcc54
+
+      - <<: *linux
+        env: CONAN_GCC_VERSIONS=6.3 CONAN_DOCKER_IMAGE=lasote/conangcc63
 
 install:
-  - export CC='gcc-4.8'
-  - export CXX='g++-4.8'
-
-  # install Conan and associated package tools
-  - pip install conan_package_tools
-
-  # initialize the local conan repository
-  - conan user
+  - chmod +x .travis/install.sh
+  - ./.travis/install.sh
 
 script:
-  - python build.py
+  - chmod +x .travis/run.sh
+  - ./.travis/run.sh
