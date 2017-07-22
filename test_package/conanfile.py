@@ -8,7 +8,7 @@ username = os.getenv("CONAN_USERNAME", "gasuketsu")
 
 class FakeItTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
-    requires = "FakeIt/master@%s/%s" % (username, channel)
+    requires = "FakeIt/2.0.4@%s/%s" % (username, channel)
     generators = "cmake"
 
     def build(self):

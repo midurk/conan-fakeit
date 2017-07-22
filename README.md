@@ -1,4 +1,4 @@
-# conan-fakeit [![Build Status](https://travis-ci.org/gasuketsu/conan-fakeit.svg?branch=master)](https://travis-ci.org/gasuketsu/conan-fakeit)
+# conan-fakeit [![Build Status](https://travis-ci.org/gasuketsu/conan-fakeit.svg?branch=2.0.4)](https://travis-ci.org/gasuketsu/conan-fakeit)
 
 [Conan.io](https://conan.io) package for [FakeIt](https://github.com/eranpeer/FakeIt)
 
