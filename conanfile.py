@@ -10,6 +10,7 @@ class FakeItConan(ConanFile):
     options = {'integration': ['boost', 'gtest', 'mstest', 'standalone', 'tpunit', 'catch', 'qtest', 'mettle']}
     default_options = 'integration=standalone'
     url = 'https://github.com/gasuketsu/conan-fakeit.git'
+    homepage = "https://github.com/eranpeer/FakeIt"
     license = 'MIT'
 
     def source(self):
