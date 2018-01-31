@@ -30,6 +30,10 @@ class FakeItConan(ConanFile):
         self.copy(pattern='*.hpp', dst='config', src='FakeIt/config')
         self.copy('license*', dst='licenses', src='FakeIt', ignore_case=True, keep_path=False)
 
+    def package_id(self):
+        # as it is header only, one package is good for everything.
+        self.info.options.integration = "All"
+
     def package_info(self):
         config_dir = os.path.join('config', str(self.options.integration))
         self.cpp_info.includedirs = ['include', config_dir]
