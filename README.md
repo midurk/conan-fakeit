@@ -1,4 +1,8 @@
-# conan-fakeit [![Build Status](https://travis-ci.org/gasuketsu/conan-fakeit.svg?branch=2.0.5)](https://travis-ci.org/gasuketsu/conan-fakeit)
+# conan-fakeit
+
+| Bintray | Travis(develop) | Travis(latest stable) |
+|---------|-----------------|-----------------------|
+|[ ![Download](https://api.bintray.com/packages/gasuketsu/conans/FakeIt%3Agasuketsu/images/download.svg) ](https://bintray.com/gasuketsu/conans/FakeIt%3Agasuketsu/_latestVersion)|[![Build Status](https://travis-ci.org/gasuketsu/conan-fakeit.svg?branch=develop)]|[![Build Status](https://travis-ci.org/gasuketsu/conan-fakeit.svg?branch=2.0.4)]|
 
 [Conan.io](https://conan.io) package for [FakeIt](https://github.com/eranpeer/FakeIt)
 
