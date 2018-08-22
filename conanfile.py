@@ -4,10 +4,10 @@ import os
 
 class FakeItConan(ConanFile):
     name = 'FakeIt'
-    version = '2.0.4'
+    version = '2.0.5'
     description = 'C++ mocking made easy. A simple yet very expressive, headers only library for c++ mocking.'
     settings = None
-    options = {'integration': ['boost', 'gtest', 'mstest', 'standalone', 'tpunit', 'catch', 'qtest', 'mettle']}
+    options = {'integration': ['boost', 'gtest', 'mstest', 'standalone', 'tpunit', 'catch', 'qtest', 'mettle', 'nunit']}
     default_options = 'integration=standalone'
     url = 'https://github.com/gasuketsu/conan-fakeit.git'
     homepage = "https://github.com/eranpeer/FakeIt"

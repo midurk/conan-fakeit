@@ -1,7 +1,7 @@
 
 env:
    global:
-     - CONAN_REFERENCE: "FakeIt/2.0.4"
+     - CONAN_REFERENCE: "FakeIt/2.0.5"
      - CONAN_USERNAME: "gasuketsu"
      - CONAN_LOGIN_USERNAME: "gasuketsu"
      - CONAN_CHANNEL: "stable"
