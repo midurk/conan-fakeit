@@ -60,5 +60,6 @@ The following frameworks are supported:
 - [MSTest](http://en.wikipedia.org/wiki/Visual_Studio_Unit_Testing_Framework) using `FakeIt:integration=mstest`
 - [QTest](http://doc.qt.io/qt-5/qttest-index.html) using `FakeIt:integration=qtest`
 - [tpunit++](https://github.com/tpounds/tpunitpp) using `FakeIt:integration=tpunit`
+- [NUnit](https://nunit.org/) using `FakeIt:integration=nunit`
 
 By default FakeIt is configured without any framework integration using `FakeIt:integration=standalone`.
