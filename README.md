@@ -16,7 +16,7 @@ Install the Conan package manager and the Conan package tools with pip
 
 Then build and test the package with
 
-    $ conan test_package
+    $ conan create . <reference>
 
 ## Using the package
 
