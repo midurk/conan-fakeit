@@ -1,4 +1,4 @@
-from conans import ConanFile
+from conans import ConanFile, tools
 import os
 
 
@@ -9,9 +9,10 @@ class FakeItConan(ConanFile):
     settings = None
     options = {'integration': ['boost', 'gtest', 'mstest', 'standalone', 'tpunit', 'catch', 'qtest', 'mettle', 'nunit']}
     default_options = 'integration=standalone'
-    url = 'https://github.com/gasuketsu/conan-fakeit.git'
+    url = 'https://github.com/midurk/conan-fakeit.git'
     homepage = "https://github.com/eranpeer/FakeIt"
     license = 'MIT'
+    exports = ["catch2-patch.diff"]
 
     def source(self):
         git_args = ' '.join([
@@ -20,6 +21,7 @@ class FakeItConan(ConanFile):
         ])
         self.run('git clone %s' % git_args)
         self.run('cd %s && git checkout %s' % (self.name, self.version))
+        tools.patch(patch_file="catch2-patch.diff", base_path=self.name)
 
     def build(self):
         # This is a header-only library so no build step required
